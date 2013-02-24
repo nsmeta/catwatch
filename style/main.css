@@ -1,0 +1,74 @@
+html {
+    min-height: 100%;
+}
+
+body {
+    background: -webkit-radial-gradient(#2289b7, #124678);
+    /* TODO for Mozilla, Opera */
+}
+
+#board-name {
+    display: block;
+    margin: 1% auto 0 auto;
+    outline: none;
+    padding-left: 5%;
+    padding-right: 5%;
+    width: 40%;
+    height: 2em;
+
+    background-color: rgba(34, 137, 183, 0.5);
+    border: none;
+    border-radius: 3px;
+    color: rgba(255, 255, 255, 0.7);
+    text-align: center;
+    font-weight: 200;
+}
+
+#board-name::-webkit-input-placeholder {
+    color: rgba(255, 255, 255, 0.3);
+}
+
+#webcam {
+    display: none;
+}
+
+.content {
+    margin: 5% auto 0 auto;
+    width: 80%;
+    text-align: center;
+}
+
+.warning {
+    color: rgba(0, 0, 0, 0.5);
+}
+
+#canvas-blended {
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-radius: 100px;
+    -webkit-transform: scale(0.25);
+}
+
+#snap {
+    opacity: 0;
+}
+
+#snap.snap {
+    opacity: 1;
+    color: rgba(0, 0, 0, 0.3);
+    animation-duration: 1s;
+    animation-name: slidein;
+}
+
+@keyframes slidein {
+    from {
+        margin-left: 100%;
+        width: 300%;
+    }
+
+    to {
+        margin-left: 0;
+        width: 100%;
+    }
+}

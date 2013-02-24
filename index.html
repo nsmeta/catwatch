@@ -1,0 +1,42 @@
+<head>
+    <title>CatWatch</title>
+</head>
+
+<body>
+    {{> catboard}}
+    <div class="content">
+        {{renderPage}}
+    </div>
+</body>
+
+<template name="catboard">
+    <input
+        type="text"
+        id="board-name"
+        value="{{currentBoard}}"
+        placeholder="Type in your cat-board name" />
+</template>
+
+<template name="board">
+    {{#each photos}}
+        <img src="{{data}}" />
+    {{/each}}
+</template>
+
+<template name="watch">
+    {{#isolate}}
+    <h1 class="warning">{{error}}</h1>
+    {{/isolate}}
+    
+    {{> webcam}}
+</template>
+
+<template name="webcam">
+    {{#if hasWebCam}}
+    <video id="webcam" autoplay width="640" height="480"></video>
+    <canvas id="canvas-source" width="640" height="480"></canvas>
+    <canvas id="canvas-blended" width="640" height="480"></canvas>
+    {{else}}
+    <h1 class="warning">Your browser does not support WebCams :(</h1>
+    {{/if}}
+</template>
